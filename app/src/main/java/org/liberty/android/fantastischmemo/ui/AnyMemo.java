@@ -304,7 +304,7 @@ public class AnyMemo extends BaseActivity {
             }
         }
         /* Detect an update */
-        if (savedVersionCode != thisVersionCode) {
+        if (false && savedVersionCode != thisVersionCode) {
             SharedPreferences.Editor editor = settings.edit();
             /* save new version number */
             editor.putInt(AMPrefKeys.SAVED_VERSION_CODE_KEY, thisVersionCode);
