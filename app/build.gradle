@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'jacoco'
 
 repositories {
     jcenter()
@@ -13,7 +14,7 @@ android {
     defaultConfig {
         versionCode 234
         versionName "10.11.4"
-        minSdkVersion 16
+        minSdkVersion 23
         targetSdkVersion 28
         testApplicationId "org.liberty.android.fantastischmemo.test"
         testInstrumentationRunner "android.test.InstrumentationTestRunner"
@@ -35,35 +36,11 @@ android {
     buildTypes {
         debug {
             versionNameSuffix "-${getBuildString()}"
+            testCoverageEnabled true
         }
         release {
             minifyEnabled true
             proguardFile 'proguard.cfg'
-        }
-    }
-
-    flavorDimensions "mode", "api"
-
-    productFlavors {
-        free {
-            applicationId "org.liberty.android.fantastischmemo"
-            dimension "mode"
-        }
-        pro {
-            applicationId "org.liberty.android.fantastischmemopro"
-            dimension "mode"
-        }
-        dev {
-            applicationId "org.liberty.android.fantastischmemodev"
-            dimension "mode"
-        }
-        api21 {
-            minSdkVersion 21
-            dimension "api"
-        }
-        api16 {
-            minSdkVersion 16
-            dimension "api"
         }
     }
 
@@ -125,7 +102,7 @@ dependencies {
     androidTestImplementation "androidx.test:runner:1.1.1"
 }
 
-static def getBuildString () {
+static def getBuildString() {
     def date = new Date()
     def formattedDate = date.format('yyMMdd')
     return "b" + formattedDate
