@@ -56,13 +56,13 @@
     </PreferenceCategory>
     <PreferenceCategory
         android:title="@string/interface_category">
-        <ListPreference
-            android:key="interface_locale"
-            android:title="@string/interface_locale_title"
-            android:defaultValue="AUTO"
-            android:entries="@array/interface_locale_list"
-            android:entryValues="@array/interface_locale_list_values"
-            android:summary="@string/interface_locale_summary" />
+<!--        <ListPreference-->
+<!--            android:key="interface_locale"-->
+<!--            android:title="@string/interface_locale_title"-->
+<!--            android:defaultValue="AUTO"-->
+<!--            android:entries="@array/interface_locale_list"-->
+<!--            android:entryValues="@array/interface_locale_list_values"-->
+<!--            android:summary="@string/interface_locale_summary" />-->
         <CheckBoxPreference android:key="fullscreen_mode"
             android:title="@string/fullscreen_title"
             android:defaultValue="false"
